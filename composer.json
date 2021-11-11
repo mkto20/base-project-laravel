@@ -14,6 +14,7 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.3",
         "laravellegends/pt-br-validator": "^8.0",
+        "riverskies/laravel-mobile-detect": "^1.3",
         "sofa/eloquence-mappable": "^7.0"
     },
     "require-dev": {
