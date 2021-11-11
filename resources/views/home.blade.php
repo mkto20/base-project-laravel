@@ -34,6 +34,12 @@
                                     {{-- <span class="float-right badge bg-success">12</span> --}}
                                 </a>
                             </li>
+                            <li class="nav-item underline">
+                                <a href="{{ route('submodules.index') }}" class="nav-link black-text">
+                                    <i class="far fa-object-ungroup mr-2"></i>Submódulos
+                                    {{-- <span class="float-right badge bg-success">12</span> --}}
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>

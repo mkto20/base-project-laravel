@@ -10,9 +10,9 @@ class Submodulo extends Model
 {
     use HasFactory;
 
-    protected $table = 'modulo';
+    protected $table = 'submodulo';
 
-    protected $fillable = ['modulo_id', 'nome', 'descricao', 'icone', 'menu', 'url', 'target', 'ordem'];
+    protected $fillable = ['modulo_id', 'nome', 'icone', 'menu', 'descricao', 'ordem'];
 
     public function operacoes()
     {
