@@ -17,7 +17,7 @@
                     <div class="card-footer p-0">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{ route('users.index') }}" class="nav-link">
                                     Usuários
                                     {{-- <span class="float-right badge bg-primary">31</span> --}}
                                 </a>
