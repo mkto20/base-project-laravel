@@ -48,3 +48,24 @@
 	color: white;
 	border-color: #00897b transparent #00897b transparent;
 }
+
+input.material {
+	background-color: transparent !important;
+	border: none !important;
+	border-bottom: 1px solid #9e9e9e !important;
+	border-radius: 0 !important;
+	outline: none !important;
+	height: 38px !important;
+	width: 100% !important;
+	font-size: 16px !important;
+	margin: 0 0 8px 0 !important;
+	padding: 0 !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	-webkit-box-sizing: content-box !important;
+	box-sizing: content-box !important;
+	-webkit-transition: border 0.3s, -webkit-box-shadow 0.3s !important;
+	transition: border 0.3s, -webkit-box-shadow 0.3s !important;
+	transition: box-shadow 0.3s, border 0.3s !important;
+	transition: box-shadow 0.3s, border 0.3s, -webkit-box-shadow 0.3s !important;
+}

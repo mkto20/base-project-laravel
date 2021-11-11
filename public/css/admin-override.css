@@ -3,3 +3,12 @@
 	border-top: 1px solid rgba(0, 0, 0, 0.125) !important;
 	margin: 0;
 }
+
+.form-group > label {
+	margin-bottom: 0;
+	font-weight: normal !important;
+}
+
+input.material.is-invalid {
+	border-bottom: 1px solid #dc3545 !important;
+}
