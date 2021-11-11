@@ -1,6 +1,6 @@
 var Toast = Swal.mixin({
 	toast: true,
-	position: "center",
+	position: "top-right",
 	showConfirmButton: false,
 	timer: 3000,
 });

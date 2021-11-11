@@ -418,6 +418,23 @@ return [
                 ],
             ],
         ],
+        'Summernote' => [
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.min.css',
+                    // 'location' => asset('vendor/bootstrap4-duallistbox/bootstrap-duallistbox.css'),
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote.min.js',
+                    // 'location' => asset('vendor/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.js'),
+                ],
+            ],
+        ],
     ],
 
     /*

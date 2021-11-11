@@ -4,6 +4,19 @@ $(document).ready(function () {
 	});
 	$('[data-toggle="tooltip"]').tooltip();
 	$(".collapse").collapse();
+	$(".summernote").summernote({
+		minHeight: 150,
+		lang: "pt-BR",
+		toolbar: [
+			// [groupName, [list of button]]
+			["style", ["bold", "italic", "underline", "clear"]],
+			["font", ["strikethrough", "superscript", "subscript"]],
+			["fontsize", ["fontsize"]],
+			["color", ["color"]],
+			["para", ["ul", "ol", "paragraph"]],
+			["height", ["height"]],
+		],
+	});
 });
 
 $("form").each(function (index, element) {

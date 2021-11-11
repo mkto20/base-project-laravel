@@ -12,7 +12,7 @@
 @stop
 
 @section('content')
-    <div class="card card-info card-outline col-8 offset-2">
+    <div class="card card-info card-outline col-8 offset-2 pr-0 pl-0">
         <form id="create" action="{{ route('users.store') }}" method="post">
             @csrf
             <div class="card-body">

@@ -9,7 +9,7 @@
             </h1>
         </div>
         <div class="col-6 pr-0">
-            <a href="{{ route('users.create') }}" class="btn btn-sm teal darken-3 white-text float-right m-0">
+            <a href="{{ route('users.create') }}" class="btn btn-sm bg-info white-text float-right m-0 elevation-1">
                 Adicionar&nbsp;<i class="fas fa-plus-circle white-text"></i>
             </a>
         </div>
