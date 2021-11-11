@@ -14,7 +14,7 @@
                 </div>
             </div>
             <div class="card-footer" style="display: none;">
-                <form id="filtering" action="{{ route('users.index') }}" method="get">
+                <form id="filtering" method="get">
                     @csrf
 
                     <div class="row">

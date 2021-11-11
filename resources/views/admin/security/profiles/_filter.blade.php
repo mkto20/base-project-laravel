@@ -14,7 +14,7 @@
                 </div>
             </div>
             <div class="card-footer" style="display: none;">
-                <form id="filtering" action="{{ route('perfis.index') }}" method="get">
+                <form id="filtering" method="get">
                     @csrf
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
