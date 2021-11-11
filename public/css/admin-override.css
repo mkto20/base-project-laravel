@@ -1,0 +1,5 @@
+.card .nav.flex-column > li {
+	border-bottom: none !important;
+	border-top: 1px solid rgba(0, 0, 0, 0.125) !important;
+	margin: 0;
+}

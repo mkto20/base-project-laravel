@@ -24,6 +24,7 @@
 
     {{-- Base Stylesheets --}}
     <link rel="stylesheet" href="{{ asset('css/assets.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin-override.css') }}">
     <link rel="stylesheet" href="{{ asset('css/colors.css') }}">
     @if (!config('adminlte.enabled_laravel_mix'))
         <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">
