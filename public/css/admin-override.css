@@ -4,6 +4,10 @@
 	margin: 0;
 }
 
+.underline:hover {
+	text-decoration: underline;
+}
+
 .form-group > label {
 	margin-bottom: 0;
 	font-weight: normal !important;
