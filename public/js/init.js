@@ -18,7 +18,7 @@ $("form").each(function (index, element) {
 			$("body").append(
 				'<div class="load"><div class= "lds-dual-ring" ></div ></div>'
 			);
-			$("body").addClass("back-escurecido");
+			// $("body").addClass("back-escurecido");
 			$("div.wrapper").addClass("back-escurecido");
 			element.submit();
 		}
