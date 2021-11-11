@@ -1,3 +1,7 @@
+.pointer {
+	cursor: pointer;
+}
+
 .back-escurecido {
 	color: grey;
 	opacity: 0.4;
