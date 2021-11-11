@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-3 mt-3">
-                <div class="card card-widget widget-user-2 card-outline card-info">
+                <div class="card card-widget widget-user-2 card-outline card-secondary">
                     <!-- Add the bg color to the header using any of the bg-* classes -->
                     <div class="widget-user-header d-flex justify-content-center">
                         <!-- /.widget-user-image -->

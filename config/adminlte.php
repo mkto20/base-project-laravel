@@ -84,7 +84,7 @@ return [
     |
     */
 
-    'layout_topnav' => true,
+    'layout_topnav' => null,
     'layout_boxed' => null,
     'layout_fixed_sidebar' => null,
     'layout_fixed_navbar' => null,
@@ -122,13 +122,13 @@ return [
     |
     */
 
-    'classes_body' => '',
+    'classes_body' => 'sidebar-collapse',
     'classes_brand' => '',
     'classes_brand_text' => '',
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'sidebar-light-secondary elevation-1',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
@@ -237,18 +237,30 @@ return [
             'topnav_right' => false,
         ],
 
+        [
+            'topnav' => true,
+            'text' => 'Home',
+            'route'  => 'home',
+            'icon' => 'fas fa-fw fa-home',
+        ],
+        [
+            'text' => 'Home',
+            'route'  => 'home',
+            'icon' => 'fas fa-fw fa-home',
+        ],
+
 
         // Sidebar items:
-        [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
+        // [
+        //     'type' => 'sidebar-menu-search',
+        //     'text' => 'search',
+        // ],
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        ['header' => 'account_settings'],
+        // ['header' => 'account_settings'],
         [
             'topnav_user' => true,
             'text' => 'profile',

@@ -22,9 +22,11 @@
                 alt="{{ Auth::user()->nome }}">
         @endif
         <span @if (config('adminlte.usermenu_image')) class="d-none d-md-inline" @endif>
-            <i class="far fa-user-circle size-2x"></i>
-            {{ Auth::user()->nome }}
-            <i class="fas fa-chevron-down ml-2"></i>
+            <i class="far fa-user-circle black-text"></i>
+            <span class="black-text">
+                {{ Auth::user()->nome }}
+            </span>
+            <i class="fas fa-chevron-down ml-2 black-text"></i>
         </span>
     </a>
 
