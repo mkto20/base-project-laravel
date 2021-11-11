@@ -24,6 +24,10 @@ class ModuloController extends Controller
             $modulos->where('nome', 'like', "%{$request->nome}%");
         }
 
+        if ($request->filled('url')) {
+            $modulos->where('url', 'like', "%{$request->url}%");
+        }
+
         return $modulos->paginate(self::$paginate);
     }
 

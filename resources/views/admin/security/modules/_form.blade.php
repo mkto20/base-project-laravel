@@ -45,8 +45,13 @@
 </div>
 <div class="col-12 mt-2">
     <div class="form-group mb-1">
-        <label for="descricao">Descrição do módulo <span class="red-text">*</span></label>
-        <textarea name="descricao" class="form-control" placeholder required
-            autofocus>{{ $modulo->descricao ?? old('descricao') }}</textarea>
+        <label for="descricao">Descrição do módulo</label>
+        <textarea name="descricao" class="form-control {{ $errors->has('descricao') ? 'is-invalid' : '' }}"
+            placeholder autofocus>{{ $modulo->descricao ?? old('descricao') }}</textarea>
+        @if ($errors->has('descricao'))
+            <div class="invalid-feedback">
+                <strong>{{ $errors->first('descricao') }}</strong>
+            </div>
+        @endif
     </div>
 </div>

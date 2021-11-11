@@ -18,7 +18,7 @@
 
 @section('content')
 
-    {{-- @include('admin.security.users._filter'); --}}
+    @include('admin.security.modules._filter')
     @include('admin.security.modules.list',$modulos)
 
 @endsection
