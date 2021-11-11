@@ -20,6 +20,10 @@ class SubmoduloController extends Controller
     {
         $submodulos = Submodulo::query();
 
+        if ($request->filled('modulo_id')) {
+            $submodulos->where('modulo_id', '=', "{$request->modulo_id}");
+        }
+
         if ($request->filled('nome')) {
             $submodulos->where('nome', 'like', "%{$request->nome}%");
         }
@@ -31,10 +35,13 @@ class SubmoduloController extends Controller
     {
         // aplica filtros de usuários
         $submodulos = $this->applyFilters($request);
+        $modulos = Modulo::orderBy('nome', 'asc')->get();
+
         // aplica filtro na session
         $request = Functions::hasFilter($request);
 
         return view('admin.security.submodules.index', compact([
+            'modulos',
             'submodulos'
         ]));
     }
