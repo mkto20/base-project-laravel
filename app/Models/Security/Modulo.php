@@ -12,7 +12,7 @@ class Modulo extends Model
 
     protected $table = 'modulo';
 
-    protected $fillable = ['nome', 'descrição', 'icone', 'url'];
+    protected $fillable = ['nome', 'icone', 'url', 'descricao'];
 
     public function submodulos()
     {

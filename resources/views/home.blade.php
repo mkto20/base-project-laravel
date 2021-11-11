@@ -29,8 +29,8 @@
                                 </a>
                             </li>
                             <li class="nav-item underline">
-                                <a href="#" class="nav-link black-text">
-                                    Módulos
+                                <a href="{{ route('modules.index') }}" class="nav-link black-text">
+                                    <i class="far fa-object-group mr-2"></i>Módulos
                                     {{-- <span class="float-right badge bg-success">12</span> --}}
                                 </a>
                             </li>

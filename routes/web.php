@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Security\ModuloController;
 use App\Http\Controllers\Security\PerfilController;
 use App\Http\Controllers\Security\UserController;
 use Illuminate\Support\Facades\Route;
@@ -34,5 +35,13 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/admin/perfis/create', [PerfilController::class, 'store'])->name('perfis.store');          // |
     Route::get('/admin/perfis/{perfil}/edit', [PerfilController::class, 'edit'])->name('perfis.edit');      // |
     Route::put('/admin/perfis/{perfil}/edit', [PerfilController::class, 'update'])->name('perfis.update');  // |
+    // ---------------------------------------------------------------------------------------------------------
+
+    // rotas de módulos ----------------------------------------------------------------------------------------
+    Route::get('/admin/modules', [ModuloController::class, 'index'])->name('modules.index');                  // |
+    Route::get('/admin/modules/create', [ModuloController::class, 'create'])->name('modules.create');         // |
+    Route::post('/admin/modules/create', [ModuloController::class, 'store'])->name('modules.store');          // |
+    Route::get('/admin/modules/{modulo}/edit', [ModuloController::class, 'edit'])->name('modules.edit');      // |
+    Route::put('/admin/modules/{modulo}/edit', [ModuloController::class, 'update'])->name('modules.update');  // |
     // ---------------------------------------------------------------------------------------------------------
 });
