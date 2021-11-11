@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Security\PerfilController;
 use App\Http\Controllers\Security\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,4 +27,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
     Route::resource('admin/users', UserController::class);
+
+    // rotas de perfil ----------------------------------------------------------------------------------------
+    Route::get('/admin/perfis', [PerfilController::class, 'index'])->name('perfis.index');                  // |
+    Route::get('/admin/perfis/create', [PerfilController::class, 'create'])->name('perfis.create');         // |
+    Route::post('/admin/perfis/create', [PerfilController::class, 'store'])->name('perfis.store');          // |
+    Route::get('/admin/perfis/{perfil}/edit', [PerfilController::class, 'edit'])->name('perfis.edit');      // |
+    Route::put('/admin/perfis/{perfil}/edit', [PerfilController::class, 'update'])->name('perfis.update');  // |
+    // ---------------------------------------------------------------------------------------------------------
 });
