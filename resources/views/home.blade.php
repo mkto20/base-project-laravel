@@ -16,20 +16,20 @@
                     </div>
                     <div class="card-footer p-0">
                         <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a href="{{ route('users.index') }}" class="nav-link">
-                                    Usuários
+                            <li class="nav-item underline">
+                                <a href="{{ route('users.index') }}" class="nav-link black-text">
+                                    <i class="fas fa-user-shield mr-2"></i>Usuários
                                     {{-- <span class="float-right badge bg-primary">31</span> --}}
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    Perfil
+                            <li class="nav-item underline">
+                                <a href="{{ route('perfis.index') }}" class="nav-link black-text">
+                                    <i class="far fa-address-card mr-2"></i>Perfil
                                     {{-- <span class="float-right badge bg-info">5</span> --}}
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
+                            <li class="nav-item underline">
+                                <a href="#" class="nav-link black-text">
                                     Módulos
                                     {{-- <span class="float-right badge bg-success">12</span> --}}
                                 </a>
