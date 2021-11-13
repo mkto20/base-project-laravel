@@ -19,7 +19,7 @@
 @stop
 
 @section('content')
-    @include('admin.security.submodules.components._item',['obj'=>$submodulo])
+    @include('admin.security.submodules.components._item',$submodulo)
     <div class="row">
         <div class="col-12 pr-0 mb-2">
             <a class="btn btn-sm bg-info white-text float-right m-0 elevation-1" data-toggle="modal"
