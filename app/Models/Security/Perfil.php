@@ -2,7 +2,7 @@
 
 namespace App\Models\Security;
 
-use App\Models\Secutiry\Operacao;
+use App\Models\Security\Operacao;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

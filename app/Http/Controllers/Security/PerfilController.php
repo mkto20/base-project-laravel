@@ -7,6 +7,7 @@ use App\Http\Requests\Security\PerfilRequest;
 use App\Models\Helpers\Functions;
 use App\Models\Helpers\ReportMessage;
 use App\Models\Security\Perfil;
+use App\Models\Security\Submodulo;
 use Illuminate\Http\Request;
 
 class PerfilController extends Controller
@@ -55,6 +56,15 @@ class PerfilController extends Controller
         return redirect()->route('perfis.index');
     }
 
+    public function show(Perfil $perfil)
+    {
+        $submodulos = Submodulo::orderBy('nome', 'asc')->get();
+        return view('admin.security.profiles.show', compact([
+            'perfil',
+            'submodulos'
+        ]));
+    }
+
     public function edit(Perfil $perfil)
     {
         return view('admin.security.profiles.edit', compact([
@@ -65,6 +75,14 @@ class PerfilController extends Controller
     public function update(PerfilRequest $request, Perfil $perfil)
     {
         $perfil->update($request->all());
+        ReportMessage::update(self::$oneModel);
+
+        return redirect()->back();
+    }
+
+    public function attach(Request $request, Perfil $perfil)
+    {
+        $perfil->operacoes()->sync($request->operacoes);
         ReportMessage::update(self::$oneModel);
 
         return redirect()->back();

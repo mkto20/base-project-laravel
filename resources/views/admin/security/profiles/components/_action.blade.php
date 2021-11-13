@@ -3,7 +3,7 @@
 </a>
 <ul aria-labelledby="menu{{ $obj->id }}" class="dropdown-menu border-0 shadow" style="left: 0px; right: inherit;">
     <li>
-        <a href="#" class="dropdown-item pointer">
+        <a href="{{ route('perfis.show', $obj) }}" class="dropdown-item pointer">
             <i class="fas fa-clipboard-list"></i>
             Permissões
         </a>

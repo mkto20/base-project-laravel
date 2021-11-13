@@ -31,6 +31,18 @@ class ReportMessage
         Session::flash("toast", "success");
     }
 
+    public static function attach(String $model)
+    {
+        Session::flash("message", Message::attach($model));
+        Session::flash("toast", "success");
+    }
+
+    public static function detach(String $model)
+    {
+        Session::flash("message", Message::detach($model));
+        Session::flash("toast", "success");
+    }
+
     public static function denied()
     {
         Session::flash("message", "denied");
