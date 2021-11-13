@@ -12,7 +12,7 @@
                     Nenhum usuário encontrado!
                 </div>
             @else
-                @include('admin.security.users.table')
+                @include('admin.security.users.components.table')
             @endif
         </div>
     </div>

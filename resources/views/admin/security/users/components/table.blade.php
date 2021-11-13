@@ -12,7 +12,7 @@
         @foreach ($users as $u)
             <tr>
                 <td width="5%">
-                    @include('admin.security.users._action',$u)
+                    @include('admin.security.users.components._action',$u)
                 </td>
                 <td>{{ $u->cpf }}</td>
                 <td>{{ $u->nome }}</td>

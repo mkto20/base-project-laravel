@@ -18,7 +18,7 @@
 
 @section('content')
 
-    @include('admin.security.users._filter')
-    @include('admin.security.users.list')
+    @include('admin.security.users.components._filter')
+    @include('admin.security.users.components.list')
 
 @endsection

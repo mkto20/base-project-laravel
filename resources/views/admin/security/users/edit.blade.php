@@ -18,7 +18,7 @@
             @method('PUT')
             <div class="card-body pb-0">
                 <div class="row">
-                    @include('admin.security.users._form',[$user])
+                    @include('admin.security.users.components._form',[$user])
                 </div>
             </div>
             <div class="card-footer">

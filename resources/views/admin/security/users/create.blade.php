@@ -17,7 +17,7 @@
             @csrf
             <div class="card-body">
                 <div class="row">
-                    @include('admin.security.users._form')
+                    @include('admin.security.users.components._form')
                 </div>
             </div>
             <div class="card-footer">
