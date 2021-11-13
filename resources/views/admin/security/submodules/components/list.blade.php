@@ -12,7 +12,7 @@
                     Nenhum submódulo encontrado!
                 </div>
             @else
-                @include('admin.security.submodules.table',$submodulos)
+                @include('admin.security.submodules.components.table',$submodulos)
             @endif
         </div>
     </div>
