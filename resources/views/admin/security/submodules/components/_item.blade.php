@@ -17,25 +17,25 @@
                 <label class="labelWorks">
                     Ícone
                 </label> <br>
-                <i class="{{ $obj->icone }}"></i>
+                <i class="{{ $submodulo->icone }}"></i>
             </div>
             <div class="col align-self-center">
                 <label class="labelWorks">
                     Apareceu no menu?
                 </label> <br>
-                {{ $obj->menu ? 'Sim' : 'Não' }}
+                {{ $submodulo->menu ? 'Sim' : 'Não' }}
             </div>
             <div class="col align-self-center">
                 <label class="labelWorks">
                     Ordenado?
                 </label> <br>
-                {{ $obj->ordem > 0 ? 'Sim' : 'Não' }}
+                {{ $submodulo->ordem > 0 ? 'Sim' : 'Não' }}
             </div>
             <div class="col align-self-center">
                 <label class="labelWorks">
                     Descrição
                 </label> <br>
-                {{ $obj->descricao ?? '-' }}
+                {{ $submodulo->descricao ?? '-' }}
             </div>
         </div>
     </div>
