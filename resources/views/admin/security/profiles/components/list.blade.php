@@ -12,7 +12,7 @@
                     Nenhum usuário encontrado!
                 </div>
             @else
-                @include('admin.security.profiles.table',$perfis)
+                @include('admin.security.profiles.components.table',$perfis)
             @endif
         </div>
     </div>

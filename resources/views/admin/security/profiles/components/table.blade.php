@@ -12,7 +12,7 @@
         @foreach ($perfis as $p)
             <tr>
                 <td width="5%">
-                    @include('admin.security.profiles._action',['obj'=>$p])
+                    @include('admin.security.profiles.components._action',['obj'=>$p])
                 </td>
                 <td>{{ $p->nome }}</td>
                 <td>{{ $p->identificador }}</td>

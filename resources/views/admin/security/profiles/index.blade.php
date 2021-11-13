@@ -18,7 +18,7 @@
 
 @section('content')
 
-    @include('admin.security.profiles._filter')
-    @include('admin.security.profiles.list',$perfis)
+    @include('admin.security.profiles.components._filter')
+    @include('admin.security.profiles.components.list',$perfis)
 
 @endsection
