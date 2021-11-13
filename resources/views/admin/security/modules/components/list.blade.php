@@ -12,7 +12,7 @@
                     Nenhum módulo encontrado!
                 </div>
             @else
-                @include('admin.security.modules.table',$modulos)
+                @include('admin.security.modules.components.table',$modulos)
             @endif
         </div>
     </div>

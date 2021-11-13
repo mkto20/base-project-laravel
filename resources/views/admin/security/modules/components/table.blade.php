@@ -12,7 +12,7 @@
         @foreach ($modulos as $obj)
             <tr>
                 <td width="5%">
-                    @include('admin.security.modules._action',$obj)
+                    @include('admin.security.modules.components._action',$obj)
                 </td>
                 <td>{{ $obj->nome }}</td>
                 <td>

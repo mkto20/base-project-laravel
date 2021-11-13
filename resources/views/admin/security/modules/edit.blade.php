@@ -18,7 +18,7 @@
             @method('PUT')
             <div class="card-body">
                 <div class="row">
-                    @include('admin.security.modules._form',$modulo)
+                    @include('admin.security.modules.components._form',$modulo)
                 </div>
             </div>
             <div class="card-footer">
