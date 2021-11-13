@@ -62,6 +62,15 @@ class SubmoduloController extends Controller
         return redirect()->route('submodules.index');
     }
 
+    public function show(Submodulo $submodulo)
+    {
+        $modulos = Modulo::orderBy('nome', 'asc')->get();
+        return view('admin.security.submodules.show', compact([
+            'modulos',
+            'submodulo'
+        ]));
+    }
+
     public function edit(Submodulo $submodulo)
     {
         $modulos = Modulo::orderBy('nome', 'asc')->get();

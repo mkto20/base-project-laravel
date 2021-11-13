@@ -10,4 +10,9 @@ class Lists
         0 => 'Não',
         1 => 'Sim'
     ];
+
+    public static $target = [
+        "" => 'Aba Atual',
+        '_target' => 'Nova Aba'
+    ];
 }

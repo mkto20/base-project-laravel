@@ -37,7 +37,7 @@
             id="modulo_id">
             <option value="" selected>Selecione...</option>
             @foreach ($modulos as $obj)
-                <option value="{{ $obj->id }}" @if ($obj->id == $submodulo->modulo_id) selected @endif>
+                <option value="{{ $obj->id }}" @if (isset($submodulo) && $obj->id == $submodulo->modulo_id) selected @endif>
                     {{ $obj->nome }}
                 </option>
             @endforeach
@@ -55,7 +55,7 @@
         <select class="custom-select {{ $errors->has('menu') ? 'is-invalid' : '' }}" name="menu" id="menu">
             <option value="" selected>Selecione...</option>
             @foreach ($lists::$boolean as $key => $value)
-                <option value="{{ $key }}" @if ($key == $submodulo->menu) selected @endif>
+                <option value="{{ $key }}" @if (isset($submodulo) && $key == $submodulo->menu) selected @endif>
                     {{ $value }}
                 </option>
             @endforeach

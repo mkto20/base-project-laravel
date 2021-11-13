@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Secutiry;
+namespace App\Models\Security;
 
 use App\Models\Security\Modulo;
 use App\Models\Security\Perfil;
@@ -14,7 +14,7 @@ class Operacao extends Model
 
     protected $table = 'operacao';
 
-    protected $fillable = ['submodulo_id', 'nome', 'descricao', 'url', 'icone', 'target'];
+    protected $fillable = ['submodulo_id', 'nome', 'nome_curto', 'descricao', 'url', 'icone', 'target'];
 
     public function perfis()
     {

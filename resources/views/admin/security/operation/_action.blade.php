@@ -3,15 +3,15 @@
 </a>
 <ul aria-labelledby="menu{{ $obj->id }}" class="dropdown-menu border-0 shadow" style="left: 0px; right: inherit;">
     <li>
-        <a href="{{ route('submodules.show', $obj) }}" class="dropdown-item pointer">
-            <i class="fas fa-user-edit"></i>
-            Operações
-        </a>
-    </li>
-    <li>
-        <a href="{{ route('submodules.edit', $obj) }}" class="dropdown-item pointer">
+        <a class="dropdown-item pointer" data-toggle="modal" data-target="#modal_operacao{{ $obj->id }}">
             <i class="far fa-edit"></i>
             Editar
         </a>
     </li>
 </ul>
+@include('admin.security.operation._modal',[
+'id'=>$obj->id,
+'submodulo'=>$submodulo,
+'title'=>'Editar Operação',
+'obj'=>$obj,
+])

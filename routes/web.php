@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Security\ModuloController;
+use App\Http\Controllers\Security\OperacaoController;
 use App\Http\Controllers\Security\PerfilController;
 use App\Http\Controllers\Security\SubmoduloController;
 use App\Http\Controllers\Security\UserController;
@@ -46,11 +47,17 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/admin/modules/{modulo}/edit', [ModuloController::class, 'update'])->name('modules.update');  // |
     // ----------------------------------------------------------------------------------------------------------
 
-    // rotas de submódulos -----------------------------------------------------------------------------------------
-    Route::get('/admin/submodules', [SubmoduloController::class, 'index'])->name('submodules.index');                  // |
-    Route::get('/admin/submodules/create', [SubmoduloController::class, 'create'])->name('submodules.create');         // |
-    Route::post('/admin/submodules/create', [SubmoduloController::class, 'store'])->name('submodules.store');          // |
+    // rotas de submódulos ---------------------------------------------------------------------------------------------------
+    Route::get('/admin/submodules', [SubmoduloController::class, 'index'])->name('submodules.index');                     // |
+    Route::get('/admin/submodules/create', [SubmoduloController::class, 'create'])->name('submodules.create');            // |
+    Route::post('/admin/submodules/create', [SubmoduloController::class, 'store'])->name('submodules.store');             // |
+    Route::get('/admin/submodules/{submodulo}', [SubmoduloController::class, 'show'])->name('submodules.show');           // |
     Route::get('/admin/submodules/{submodulo}/edit', [SubmoduloController::class, 'edit'])->name('submodules.edit');      // |
     Route::put('/admin/submodules/{submodulo}/edit', [SubmoduloController::class, 'update'])->name('submodules.update');  // |
-    // ----------------------------------------------------------------------------------------------------------
+    // -----------------------------------------------------------------------------------------------------------------------
+
+    // rotas de Operacoes -------------------------------------------------------------------------------------------------
+    Route::post('/admin/operations/create', [OperacaoController::class, 'store'])->name('operations.store');           // |
+    Route::put('/admin/operations/{operacao}/edit', [OperacaoController::class, 'update'])->name('operations.update'); // |
+    // --------------------------------------------------------------------------------------------------------------------
 });
