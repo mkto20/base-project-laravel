@@ -9,7 +9,7 @@
         </a>
     </li>
 </ul>
-@include('admin.security.operation._modal',[
+@include('admin.security.operation.components._modal',[
 'id'=>$obj->id,
 'submodulo'=>$submodulo,
 'title'=>'Editar Operação',

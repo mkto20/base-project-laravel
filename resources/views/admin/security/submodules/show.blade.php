@@ -26,7 +26,7 @@
                 data-target="#modal_operacao0">
                 Nova Operação &nbsp;<i class="fas fa-plus-circle white-text"></i>
             </a>
-            @include('admin.security.operation._modal',[
+            @include('admin.security.operation.components._modal',[
             'id'=>0,
             'submodulo'=>$submodulo,
             'title'=>'Nova Operação',
@@ -34,7 +34,7 @@
             ])
         </div>
         <div class="col-12 pr-0 mb-2">
-            @include('admin.security.operation.list',['operacoes'=>$submodulo->operacoes()->paginate(10)])
+            @include('admin.security.operation.components.list',['operacoes'=>$submodulo->operacoes()->paginate(10)])
         </div>
     </div>
 

@@ -14,7 +14,7 @@
         @foreach ($operacoes as $obj)
             <tr>
                 <td width="5%">
-                    @include('admin.security.operation._action',[$obj,$submodulo])
+                    @include('admin.security.operation.components._action',[$obj,$submodulo])
                 </td>
                 <td>
                     {{ $obj->nome ?? '-' }}

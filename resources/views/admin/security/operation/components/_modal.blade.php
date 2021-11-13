@@ -17,7 +17,7 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    @include('admin.security.operation._form',[$obj])
+                    @include('admin.security.operation.components._form',[$obj])
                 </div>
             </div>
             <div class="modal-footer justify-content-end">

@@ -12,7 +12,7 @@
                     Nenhuma operação encontrada!
                 </div>
             @else
-                @include('admin.security.operation.table',[$operacoes,$submodulo])
+                @include('admin.security.operation.components.table',[$operacoes,$submodulo])
             @endif
         </div>
     </div>
