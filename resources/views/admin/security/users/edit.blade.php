@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
 @section('content_header')
-    <div class="d-flex d-inline-flex col-12 pl-0 pr-0">
+    <div class="d-flex d-inline-flex col-8 offset-2 pl-0 pr-0">
         <div class="col-12 pl-0">
             <h1 class="m-0 text-dark">
                 <i class="fas fa-user-shield"></i>
