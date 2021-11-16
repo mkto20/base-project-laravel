@@ -9,7 +9,7 @@
                     {{-- <button type="button" class="close" data-dismiss="alert"
                         aria-hidden="true">×</button> --}}
                     <i class="icon fas fa-info"></i>
-                    Nenhum usuário encontrado!
+                    Nenhum perfil encontrado!
                 </div>
             @else
                 @include('admin.security.profiles.components.table',$perfis)
