@@ -11,7 +11,7 @@
                         Home
                     </a>
                 </li>
-                @foreach (Auth::user()->operacoesAtribuidas() as $operacao)
+                @foreach (Auth::user()->operacoesBreadcumb() as $operacao)
                     @if (Request::route()->getAction()['as'] == $operacao->url)
                         <li class="breadcrumb-item">{{ $operacao->submodulo->nome }}</li>
                         <li class="breadcrumb-item active">{{ $operacao->nome }}</li>

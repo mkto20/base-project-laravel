@@ -30,6 +30,21 @@
         @endif
     </div>
 </div>
+<div class="col-sm-12 col-md-4">
+    <div class="form-group">
+        <label for="url">
+            URL operação principal
+            <span class="red-text">*</span>
+        </label>
+        <input type="text" class="form-control material {{ $errors->has('url') ? 'is-invalid' : '' }}" id="url"
+            name="url" value="{{ $submodulo->url ?? old('url') }}" required>
+        @if ($errors->has('url'))
+            <div class="invalid-feedback">
+                <strong>{{ $errors->first('url') }}</strong>
+            </div>
+        @endif
+    </div>
+</div>
 <div class="col-4">
     <div class="form-group">
         <label for="modulo_id">Módulo <span class="red-text">*</span></label>

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Security\Modulo;
 use App\Models\Security\Perfil;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -37,7 +38,7 @@ class User extends Authenticatable
         $this->attributes['password'] = Hash::make($password);
     }
 
-    public function operacoesAtribuidas()
+    public function operacoesBreadcumb()
     {
         $ops = array();
         foreach ($this->perfis as $perfil) {
@@ -48,6 +49,11 @@ class User extends Authenticatable
             }
         }
         return $ops;
+    }
+
+    public function allModules()
+    {
+        return Modulo::orderBy('nome', 'asc')->get();
     }
 
     public function perfis()

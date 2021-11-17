@@ -27,6 +27,7 @@ class SubmoduloRequest extends FormRequest
             'modulo_id' => ['required', 'numeric'],
             'nome' => ['required', 'string', 'max:100'],
             'icone' => ['required', 'string', 'max:45'],
+            'url' => ['required', 'string', 'max:20', Rule::unique('submodulo')->ignore($this->submodulo)],
             'menu' => ['required', 'boolean'],
             'descricao' => ['sometimes', 'nullable', 'string', 'max:200'],
             'ordem' => ['sometimes', 'nullable', 'boolean'],

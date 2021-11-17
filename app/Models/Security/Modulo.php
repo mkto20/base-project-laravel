@@ -16,6 +16,6 @@ class Modulo extends Model
 
     public function submodulos()
     {
-        return $this->hasMany(Submodulo::class);
+        return $this->hasMany(Submodulo::class)->orderBy('nome', 'asc');
     }
 }

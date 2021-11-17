@@ -11,7 +11,7 @@ class Submodulo extends Model
 
     protected $table = 'submodulo';
 
-    protected $fillable = ['modulo_id', 'nome', 'icone', 'menu', 'descricao', 'ordem'];
+    protected $fillable = ['modulo_id', 'nome', 'icone', 'url', 'menu', 'descricao', 'ordem'];
 
     public function operacoes()
     {

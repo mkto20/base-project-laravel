@@ -5,6 +5,7 @@
             <th>Módulo</th>
             <th>Nome</th>
             <th>Ícone</th>
+            <th>URL operação Principal</th>
             <th>Aparece no menu?</th>
             <th>Ordenado?</th>
             <th>Descrição</th>
@@ -22,6 +23,9 @@
                 </td>
                 <td>
                     <i class="{{ $obj->icone }}"></i>
+                </td>
+                <td>
+                    {{ $obj->url ?? '-' }}
                 </td>
                 <td>
                     {{ $obj->menu ? 'Sim' : 'Não' }}
