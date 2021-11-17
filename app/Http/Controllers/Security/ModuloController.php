@@ -34,6 +34,7 @@ class ModuloController extends Controller
     public function index(Request $request)
     {
         // aplica filtros de usuários
+        $this->authorize('viewAny', Modulo::class);
         $modulos = $this->applyFilters($request);
         // aplica filtro na session
         $request = Functions::hasFilter($request);
@@ -45,11 +46,13 @@ class ModuloController extends Controller
 
     public function create()
     {
+        $this->authorize('create', Modulo::class);
         return view('admin.security.modules.create');
     }
 
     public function store(ModuloRequest $request)
     {
+        $this->authorize('create', Modulo::class);
         Modulo::create($request->all());
         ReportMessage::save(self::$oneModel);
 
@@ -58,6 +61,7 @@ class ModuloController extends Controller
 
     public function edit(Modulo $modulo)
     {
+        $this->authorize('update', Modulo::class);
         return view('admin.security.modules.edit', compact([
             'modulo'
         ]));
@@ -65,6 +69,7 @@ class ModuloController extends Controller
 
     public function update(ModuloRequest $request, Modulo $modulo)
     {
+        $this->authorize('update', Modulo::class);
         $modulo->update($request->all());
         ReportMessage::update(self::$oneModel);
 
