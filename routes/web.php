@@ -30,15 +30,17 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
     Route::resource('admin/users', UserController::class);
+    Route::put('/admin/users/{user}/attach', [UserController::class, 'attach'])->name('users.attach');
+    Route::delete('/admin/users/{user}/detach', [UserController::class, 'detach'])->name('users.detach');
 
     // rotas de perfil ----------------------------------------------------------------------------------------
-    Route::get('/admin/perfis', [PerfilController::class, 'index'])->name('perfis.index');                  // |
-    Route::get('/admin/perfis/create', [PerfilController::class, 'create'])->name('perfis.create');         // |
-    Route::post('/admin/perfis/create', [PerfilController::class, 'store'])->name('perfis.store');          // |
-    Route::get('/admin/perfis/{perfil}', [PerfilController::class, 'show'])->name('perfis.show');           // |
-    Route::put('/admin/perfis/{perfil}/attach', [PerfilController::class, 'attach'])->name('perfis.attach');  // |
-    Route::get('/admin/perfis/{perfil}/edit', [PerfilController::class, 'edit'])->name('perfis.edit');      // |
-    Route::put('/admin/perfis/{perfil}/edit', [PerfilController::class, 'update'])->name('perfis.update');  // |
+    Route::get('/admin/perfis', [PerfilController::class, 'index'])->name('perfis.index');                   // |
+    Route::get('/admin/perfis/create', [PerfilController::class, 'create'])->name('perfis.create');          // |
+    Route::post('/admin/perfis/create', [PerfilController::class, 'store'])->name('perfis.store');           // |
+    Route::get('/admin/perfis/{perfil}', [PerfilController::class, 'show'])->name('perfis.show');            // |
+    Route::put('/admin/perfis/{perfil}/attach', [PerfilController::class, 'attach'])->name('perfis.attach'); // |
+    Route::get('/admin/perfis/{perfil}/edit', [PerfilController::class, 'edit'])->name('perfis.edit');       // |
+    Route::put('/admin/perfis/{perfil}/edit', [PerfilController::class, 'update'])->name('perfis.update');   // |
     // ---------------------------------------------------------------------------------------------------------
 
     // rotas de módulos -----------------------------------------------------------------------------------------

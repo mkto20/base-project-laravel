@@ -30,7 +30,7 @@
                     {{ $obj->ordem > 0 ? 'Sim' : 'Não' }}
                 </td>
                 <td>
-                    {{ $obj->descricao }}
+                    {{ $obj->descricao ?? '-' }}
                 </td>
             </tr>
         @endforeach

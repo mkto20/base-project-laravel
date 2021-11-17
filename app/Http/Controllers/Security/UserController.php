@@ -64,6 +64,16 @@ class UserController extends Controller
         return redirect()->route('users.index');
     }
 
+    public function show(User $user)
+    {
+        $perfis = Perfil::all();
+
+        return view('admin.security.users.show', compact([
+            'user',
+            'perfis'
+        ]));
+    }
+
     public function edit(User $user)
     {
         $perfis = Perfil::all();
@@ -79,6 +89,22 @@ class UserController extends Controller
 
         $user->update($request->all());
         ReportMessage::update(self::$oneModel);
+
+        return redirect()->back();
+    }
+
+    public function attach(Request $request, User $user)
+    {
+        $user->perfis()->syncWithoutDetaching($request->perfil_id);
+        ReportMessage::attach("Perfil");
+
+        return redirect()->back();
+    }
+
+    public function detach(Request $request, User $user)
+    {
+        $user->perfis()->detach($request->perfil_id);
+        ReportMessage::detach("Perfil");
 
         return redirect()->back();
     }
