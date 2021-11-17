@@ -237,17 +237,17 @@ return [
             'topnav_right' => false,
         ],
 
-        [
-            'topnav' => true,
-            'text' => 'Home',
-            'route'  => 'home',
-            'icon' => 'fas fa-fw fa-home',
-        ],
-        [
-            'text' => 'Home',
-            'route'  => 'home',
-            'icon' => 'fas fa-fw fa-home',
-        ],
+        // [
+        //     'topnav' => true,
+        //     'text' => 'Home',
+        //     'route'  => 'home',
+        //     'icon' => 'fas fa-fw fa-home',
+        // ],
+        // [
+        //     'text' => 'Home',
+        //     'route'  => 'home',
+        //     'icon' => 'fas fa-fw fa-home',
+        // ],
 
 
         // Sidebar items:

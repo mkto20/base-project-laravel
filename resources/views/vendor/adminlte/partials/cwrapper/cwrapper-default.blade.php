@@ -9,6 +9,8 @@
 {{-- Default Content Wrapper --}}
 <div class="content-wrapper {{ config('adminlte.classes_content_wrapper', '') }}">
 
+    @include('layouts.breadcumb')
+
     {{-- Content Header --}}
     @hasSection('content_header')
         <div class="content-header">

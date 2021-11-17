@@ -37,6 +37,19 @@ class User extends Authenticatable
         $this->attributes['password'] = Hash::make($password);
     }
 
+    public function operacoesAtribuidas()
+    {
+        $ops = array();
+        foreach ($this->perfis as $perfil) {
+            foreach ($perfil->operacoes as $operacao) {
+                if (!in_array($operacao->url, array_column($ops, 'url'))) {
+                    array_push($ops, $operacao);
+                }
+            }
+        }
+        return $ops;
+    }
+
     public function perfis()
     {
         return $this->belongsToMany(Perfil::class, 'user_perfil');
