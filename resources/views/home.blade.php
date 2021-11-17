@@ -15,7 +15,7 @@
                         <div class="card-footer p-0">
                             <ul class="nav flex-column">
                                 @foreach ($modulo->submodulos as $submodulo)
-                                    @if ($submodulo->menu && in_array($submodulo->url, array_column(Auth::user()->operacoesBreadcumb(), 'url')))
+                                    @if ($submodulo->menu)
                                         <li class="nav-item underline">
                                             <a href="{{ route($submodulo->url) }}" class="nav-link black-text">
                                                 <i class="{{ $submodulo->icone }} mr-2"></i>{{ $submodulo->nome }}
