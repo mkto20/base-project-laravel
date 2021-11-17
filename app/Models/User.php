@@ -74,4 +74,14 @@ class User extends Authenticatable
         }
         return $ops;
     }
+
+    public function canOperate(String $namedRoute)
+    {
+        foreach ($this->operacoesBreadcumb() as $operacao) {
+            if ($operacao->url == $namedRoute) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
