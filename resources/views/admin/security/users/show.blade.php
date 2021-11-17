@@ -8,6 +8,13 @@
                 Usuário
             </h1>
         </div>
+        <div class="col-6 pr-0 mb-2">
+            <a href="{{ route('users.index') }}"
+                class="btn btn-sm light-blue darken-3 white-text float-right m-0 elevation-1">
+                <i class="fas fa-arrow-left"></i>
+                Voltar
+            </a>
+        </div>
     </div>
 
 @stop

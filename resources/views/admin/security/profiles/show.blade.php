@@ -69,10 +69,6 @@
                 </div>
             </div>
             <div class="card-footer">
-                <a href="{{ route('perfis.index') }}" class="btn light-blue darken-3 white-text m-1 float-right">
-                    <i class="fas fa-arrow-left"></i>
-                    Voltar
-                </a>
                 <button type="submit" class="btn teal darken-3 white-text m-1 float-right">
                     <i class="fas fa-sync"></i>
                     Atualizar
