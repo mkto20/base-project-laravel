@@ -33,6 +33,7 @@ class SubmoduloController extends Controller
 
     public function index(Request $request)
     {
+        $this->authorize('viewAny', Submodulo::class);
         // aplica filtros de usuários
         $submodulos = $this->applyFilters($request);
         $modulos = Modulo::orderBy('nome', 'asc')->get();
@@ -48,6 +49,7 @@ class SubmoduloController extends Controller
 
     public function create()
     {
+        $this->authorize('create', Submodulo::class);
         $modulos = Modulo::orderBy('nome', 'asc')->get();
         return view('admin.security.submodules.create', compact([
             'modulos'
@@ -56,6 +58,7 @@ class SubmoduloController extends Controller
 
     public function store(SubmoduloRequest $request)
     {
+        $this->authorize('create', Submodulo::class);
         Submodulo::create($request->all());
         ReportMessage::save(self::$oneModel);
 
@@ -64,6 +67,7 @@ class SubmoduloController extends Controller
 
     public function show(Submodulo $submodulo)
     {
+        $this->authorize('show', Submodulo::class);
         $modulos = Modulo::orderBy('nome', 'asc')->get();
         return view('admin.security.submodules.show', compact([
             'modulos',
@@ -73,6 +77,7 @@ class SubmoduloController extends Controller
 
     public function edit(Submodulo $submodulo)
     {
+        $this->authorize('update', Submodulo::class);
         $modulos = Modulo::orderBy('nome', 'asc')->get();
         return view('admin.security.submodules.edit', compact([
             'modulos',
@@ -82,6 +87,7 @@ class SubmoduloController extends Controller
 
     public function update(SubmoduloRequest $request, Submodulo $submodulo)
     {
+        $this->authorize('update', Submodulo::class);
         $submodulo->update($request->all());
         ReportMessage::update(self::$oneModel);
 

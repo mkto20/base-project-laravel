@@ -16,6 +16,7 @@ class OperacaoController extends Controller
 
     public function store(OperacaoRequest $request)
     {
+        $this->authorize('create', Operacao::class);
         Operacao::create($request->all());
         ReportMessage::save(self::$oneModel);
 
@@ -25,6 +26,7 @@ class OperacaoController extends Controller
 
     public function update(OperacaoRequest $request, Operacao $operacao)
     {
+        $this->authorize('update', Operacao::class);
         $operacao->update($request->all());
         ReportMessage::update(self::$oneModel);
 

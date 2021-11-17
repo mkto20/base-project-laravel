@@ -37,6 +37,7 @@ class UserController extends Controller
 
     public function index(Request $request)
     {
+        $this->authorize('viewAny', User::class);
         // aplica filtros de usuários
         $users = $this->applyFilters($request);
         // aplica filtro na session
@@ -49,6 +50,7 @@ class UserController extends Controller
 
     public function create()
     {
+        $this->authorize('create', User::class);
         $perfis = Perfil::all();
 
         return view('admin.security.users.create', compact([
@@ -58,6 +60,7 @@ class UserController extends Controller
 
     public function store(UserRequest $request)
     {
+        $this->authorize('create', User::class);
         User::create($request->all());
         ReportMessage::save(self::$oneModel);
 
@@ -66,6 +69,7 @@ class UserController extends Controller
 
     public function show(User $user)
     {
+        $this->authorize('show', User::class);
         $perfis = Perfil::all();
 
         return view('admin.security.users.show', compact([
@@ -76,6 +80,7 @@ class UserController extends Controller
 
     public function edit(User $user)
     {
+        $this->authorize('update', User::class);
         $perfis = Perfil::all();
 
         return view('admin.security.users.edit', compact([
@@ -86,7 +91,7 @@ class UserController extends Controller
 
     public function update(UserRequest $request, User $user)
     {
-
+        $this->authorize('update', User::class);
         $user->update($request->all());
         ReportMessage::update(self::$oneModel);
 
@@ -95,6 +100,7 @@ class UserController extends Controller
 
     public function attach(Request $request, User $user)
     {
+        $this->authorize('show', User::class);
         $user->perfis()->syncWithoutDetaching($request->perfil_id);
         ReportMessage::attach("Perfil");
 
@@ -103,6 +109,7 @@ class UserController extends Controller
 
     public function detach(Request $request, User $user)
     {
+        $this->authorize('show', User::class);
         $user->perfis()->detach($request->perfil_id);
         ReportMessage::detach("Perfil");
 

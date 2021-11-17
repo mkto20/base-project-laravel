@@ -22,16 +22,18 @@
     @include('admin.security.submodules.components._item',$submodulo)
     <div class="row">
         <div class="col-12 pr-0 mb-2">
-            <a class="btn btn-sm bg-info white-text float-right m-0 elevation-1" data-toggle="modal"
-                data-target="#modal_operacao0">
-                Nova Operação &nbsp;<i class="fas fa-plus-circle white-text"></i>
-            </a>
-            @include('admin.security.operation.components._modal',[
-            'id'=>0,
-            'submodulo'=>$submodulo,
-            'title'=>'Nova Operação',
-            'obj'=>null,
-            ])
+            @can('create', App\Models\Security\Operacao::class)
+                <a class="btn btn-sm bg-info white-text float-right m-0 elevation-1" data-toggle="modal"
+                    data-target="#modal_operacao0">
+                    Nova Operação &nbsp;<i class="fas fa-plus-circle white-text"></i>
+                </a>
+                @include('admin.security.operation.components._modal',[
+                'id'=>0,
+                'submodulo'=>$submodulo,
+                'title'=>'Nova Operação',
+                'obj'=>null,
+                ])
+            @endcan
         </div>
         <div class="col-12 pr-0 mb-2">
             @include('admin.security.operation.components.list',['operacoes'=>$submodulo->operacoes()->paginate(10)])
