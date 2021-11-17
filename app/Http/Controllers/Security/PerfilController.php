@@ -33,6 +33,7 @@ class PerfilController extends Controller
 
     public function index(Request $request)
     {
+        $this->authorize('viewAny', Perfil::class);
         // aplica filtros de usuários
         $perfis = $this->applyFilters($request);
         // aplica filtro na session
@@ -45,11 +46,13 @@ class PerfilController extends Controller
 
     public function create()
     {
+        $this->authorize('create', Perfil::class);
         return view('admin.security.profiles.create');
     }
 
     public function store(PerfilRequest $request)
     {
+        $this->authorize('create', Perfil::class);
         Perfil::create($request->all());
         ReportMessage::save(self::$oneModel);
 
@@ -58,6 +61,7 @@ class PerfilController extends Controller
 
     public function show(Perfil $perfil)
     {
+        $this->authorize('show', Perfil::class);
         $submodulos = Submodulo::orderBy('nome', 'asc')->get();
         return view('admin.security.profiles.show', compact([
             'perfil',
@@ -67,6 +71,7 @@ class PerfilController extends Controller
 
     public function edit(Perfil $perfil)
     {
+        $this->authorize('update', Perfil::class);
         return view('admin.security.profiles.edit', compact([
             'perfil'
         ]));
@@ -74,6 +79,7 @@ class PerfilController extends Controller
 
     public function update(PerfilRequest $request, Perfil $perfil)
     {
+        $this->authorize('update', Perfil::class);
         $perfil->update($request->all());
         ReportMessage::update(self::$oneModel);
 
@@ -82,6 +88,7 @@ class PerfilController extends Controller
 
     public function attach(Request $request, Perfil $perfil)
     {
+        $this->authorize('show', Perfil::class);
         $perfil->operacoes()->sync($request->operacoes);
         ReportMessage::update(self::$oneModel);
 
