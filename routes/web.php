@@ -29,9 +29,9 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+    Route::put('/admin/users/attach/{user}', [UserController::class, 'attach'])->name('users.attach');
+    Route::put('/admin/users/detach/{user}', [UserController::class, 'detach'])->name('users.detach');
     Route::resource('admin/users', UserController::class);
-    Route::put('/admin/users/{user}/attach', [UserController::class, 'attach'])->name('users.attach');
-    Route::delete('/admin/users/{user}/detach', [UserController::class, 'detach'])->name('users.detach');
 
     // rotas de perfil ----------------------------------------------------------------------------------------
     Route::get('/admin/perfis', [PerfilController::class, 'index'])->name('perfis.index');                   // |

@@ -12,7 +12,7 @@
                     Nenhum perfil encontrado!
                 </div>
             @else
-                @include('admin.security.profiles.components.table',$perfis)
+                @include('admin.security.users.profiles.table',$perfis)
             @endif
         </div>
     </div>

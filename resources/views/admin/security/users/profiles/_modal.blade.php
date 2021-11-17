@@ -3,12 +3,11 @@
         <div class="modal-content">
             @if (is_null($obj))
                 <form id="profiles{{ $id }}" action="{{ route('users.attach', $user) }}" method="POST">
-                    @method('PUT')
                 @else
-                    <form id="remove_profile{{ $id }}" action="{{ route('users.detach', $obj) }}"
+                    <form id="remove_profile{{ $id }}" action="{{ route('users.detach', $user) }}"
                         method="POST">
-                        @method('delete')
             @endif
+            @method('PUT')
             @csrf
             <div class="modal-header">
                 <h4 class="modal-title">{{ $title }}</h4>
