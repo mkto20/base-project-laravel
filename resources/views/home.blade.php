@@ -3,7 +3,15 @@
 @section('content')
     <div class="container">
         <div class="row">
-            @foreach (Auth::user()->allModules() as $modulo)
+            @php
+                $modulos = Auth::user()
+                    ->myModules()
+                    ->get();
+                $submodules = Auth::user()
+                    ->mySubmodules()
+                    ->get();
+            @endphp
+            @foreach ($modulos as $modulo)
                 <div class="col-3 mt-3">
                     <div class="card card-widget widget-user-2 card-outline card-secondary">
                         <div class="widget-user-header d-flex justify-content-center">
@@ -14,7 +22,7 @@
                         </div>
                         <div class="card-footer p-0">
                             <ul class="nav flex-column">
-                                @foreach ($modulo->submodulos as $submodulo)
+                                @foreach ($submodules as $submodulo)
                                     @if ($submodulo->menu)
                                         <li class="nav-item underline">
                                             <a href="{{ route($submodulo->url) }}" class="nav-link black-text">
