@@ -2,7 +2,12 @@
 
 namespace App\Exceptions;
 
+use App\Models\Helpers\ReportMessage;
+use Exception;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Validation\UnauthorizedException;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -37,5 +42,28 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
             //
         });
+
+        $this->renderable(function (Exception $e, $request) {
+            // dd($e);
+            return $this->handleException($request, $e);
+        });
+    }
+
+    public function handleException($request, Exception $exception)
+    {
+        if ($exception instanceof AccessDeniedHttpException) {
+            ReportMessage::denied();
+            return redirect()->route('home');
+        }
+
+        if ($exception instanceof UnauthorizedException) {
+            ReportMessage::denied();
+            return redirect()->route('home');
+        }
+
+        if ($exception instanceof AuthorizationException) {
+            ReportMessage::denied();
+            return redirect()->route('home');
+        }
     }
 }

@@ -45,8 +45,8 @@ class ReportMessage
 
     public static function denied()
     {
-        Session::flash("message", "denied");
-        Session::flash("toast", "erro");
+        Session::flash("message", "Acesso não permitido!");
+        Session::flash("toast", "error");
     }
 
     public static function notFound()
