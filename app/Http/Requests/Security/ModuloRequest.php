@@ -27,7 +27,7 @@ class ModuloRequest extends FormRequest
         return [
             'nome' => ['required', 'string', 'max:100'],
             'icone' => ['required', 'string', 'max:45'],
-            'url' => ['required', 'string', 'max:20', Rule::unique('modulo')->ignore($this->modulo)],
+            'url' => ['sometimes', 'nullable', 'string', 'max:20', Rule::unique('modulo')->ignore($this->modulo)],
             'descricao' => ['sometimes', 'nullable', 'string', 'max:200'],
         ];
     }

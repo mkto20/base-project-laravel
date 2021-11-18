@@ -32,7 +32,6 @@
     <div class="form-group">
         <label for="url">
             URL (label)
-            <span class="red-text">*</span>
         </label>
         <input type="text" class="form-control material {{ $errors->has('url') ? 'is-invalid' : '' }}" id="url"
             name="url" value="{{ $modulo->url ?? old('url') }}">
