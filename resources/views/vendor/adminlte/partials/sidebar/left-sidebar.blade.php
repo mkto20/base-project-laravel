@@ -19,6 +19,42 @@
                 @endif>
                 {{-- Configured sidebar links --}}
                 @each('adminlte::partials.sidebar.menu-item', $adminlte->menu('sidebar'), 'item')
+
+                @php
+                    $modulos = Auth::user()->myModules();
+                    $submodules = Auth::user()->mySubmodules();
+                @endphp
+                @if (count($modulos->get()) > 0)
+                    @foreach ($modulos->get() as $modulo)
+                        <li id="{{ $modulo->id }}" class="nav-item has-treeview">
+                            <a class="nav-link" >
+                                <i class="{{ $modulo->icone ?? 'far fa-fw fa-circle' }}"></i>
+                                <p>
+                                    {{ $modulo->nome }}
+                                    <i class="fas fa-angle-left right"></i>
+                                    {{-- <span class="badge badge-{{ $item['label_color'] ?? 'primary' }} right">
+                                        {{ $modulo->nome }}
+                                    </span> --}}
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                @foreach ($submodules->get() as $submodulo)
+                                    @if ($submodulo->menu)
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route($submodulo->url) }}">
+                                                <i class="{{ $submodulo->icone }}"></i>
+                                                <p>
+                                                    {{ $submodulo->nome }}
+                                                </p>
+                                            </a>
+                                        </li>
+                                    @endif
+                                @endforeach
+                            </ul>
+                        </li>
+                    @endforeach
+                @endif
+
             </ul>
         </nav>
     </div>

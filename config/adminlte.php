@@ -243,11 +243,11 @@ return [
         //     'route'  => 'home',
         //     'icon' => 'fas fa-fw fa-home',
         // ],
-        // [
-        //     'text' => 'Home',
-        //     'route'  => 'home',
-        //     'icon' => 'fas fa-fw fa-home',
-        // ],
+        [
+            'text' => 'Home',
+            'route'  => 'home',
+            'icon' => 'fas fa-fw fa-home',
+        ],
 
 
         // Sidebar items:
@@ -274,7 +274,7 @@ return [
             'icon' => 'fas fa-fw fa-lock',
         ],
         // [
-        //     'text'    => 'multilevel',
+        //     'text'    => 'Segurança',
         //     'icon'    => 'fas fa-fw fa-share',
         //     'submenu' => [
         //         [
