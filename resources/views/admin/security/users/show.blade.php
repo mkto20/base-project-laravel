@@ -3,10 +3,7 @@
 @section('content_header')
     <div class="d-flex d-inline-flex col-12">
         <div class="col-6">
-            <h1 class="m-0 text-dark">
-                <i class="fas fa-user-shield"></i>
-                Usuário
-            </h1>
+            @include('layouts.title-page')
         </div>
         <div class="col-6 pr-0 mb-2">
             <a href="{{ route('users.index') }}"

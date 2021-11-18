@@ -3,10 +3,7 @@
 @section('content_header')
     <div class="d-flex d-inline-flex col-12 pl-0 pr-0">
         <div class="col-6 pl-0">
-            <h1 class="m-0 text-dark">
-                <i class="far fa-address-card"></i>
-                Perfis
-            </h1>
+            @include('layouts.title-page')
         </div>
         @can('create', App\Models\Security\Perfil::class)
             <div class="col-6 pr-0">
