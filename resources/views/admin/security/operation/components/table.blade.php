@@ -6,6 +6,7 @@
             <th>Nome curto</th>
             <th>icone</th>
             <th>URL</th>
+            <th>Status</th>
             <th>Nova aba?</th>
             <th>Descrição</th>
         </tr>
@@ -29,7 +30,14 @@
                     {{ $obj->url }}
                 </td>
                 <td>
-                    {{ $obj->target ?? 'Não' }}
+                    @if ($obj->status)
+                        <span class="green-text">Ativo</span>
+                    @else
+                        <span class="red-text">Inativo</span>
+                    @endif
+                </td>
+                <td>
+                    {{ is_null($obj->target) ? 'Aba Atual' : 'Nova Aba' }}
                 </td>
                 <td>
                     {{ $obj->descricao ?? '-' }}

@@ -61,9 +61,28 @@
     </div>
 </div>
 <div class="col-4">
-    <div class="form-group">
+    <div class="form-group d-flex flex-column">
+        <label for="status">Ativo? <span class="red-text">*</span></label>
+        <select class="custom-select {{ $errors->has('status') ? 'is-invalid' : '' }}" name="status" id="status"
+            style="width: 100%">
+            @foreach ($lists::$boolean as $key => $value)
+                <option value="{{ $key }}" @if (isset($obj) && $key == $obj->status) selected @endif>
+                    {{ $value }}
+                </option>
+            @endforeach
+        </select>
+        @if ($errors->has('status'))
+            <div class="invalid-feedback">
+                <strong>{{ $errors->first('status') }}</strong>
+            </div>
+        @endif
+    </div>
+</div>
+<div class="col-4">
+    <div class="form-group d-flex flex-column">
         <label for="target">Nova aba? <span class="red-text">*</span></label>
-        <select class="custom-select {{ $errors->has('target') ? 'is-invalid' : '' }}" name="target" id="target">
+        <select class="custom-select {{ $errors->has('target') ? 'is-invalid' : '' }}" name="target" id="target"
+            style="width: 100%">
             @foreach ($lists::$target as $key => $value)
                 <option value="{{ $key }}" @if (isset($obj) && $key == $obj->target) selected @endif>
                     {{ $value }}

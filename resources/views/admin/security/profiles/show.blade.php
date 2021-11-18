@@ -44,7 +44,13 @@
                                 </div>
                                 <div class="card-body p-0" style="display: none;">
                                     <ul class="nav nav-pills flex-column">
-                                        @foreach ($submodulo->operacoes as $operacao)
+                                        @php
+                                            $operacoes = $submodulo
+                                                ->operacoes()
+                                                ->where('status', '=', 1)
+                                                ->get();
+                                        @endphp
+                                        @foreach ($operacoes as $operacao)
                                             <li class="nav-item active">
                                                 <a href="#" class="nav-link d-flex justify-content-between">
                                                     <label for="{{ $operacao->url }}" class="mt-1">

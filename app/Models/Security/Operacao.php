@@ -14,7 +14,7 @@ class Operacao extends Model
 
     protected $table = 'operacao';
 
-    protected $fillable = ['submodulo_id', 'nome', 'nome_curto', 'descricao', 'url', 'icone', 'target'];
+    protected $fillable = ['submodulo_id', 'nome', 'nome_curto', 'descricao', 'url', 'icone', 'status', 'target'];
 
     public function perfis()
     {
