@@ -26,8 +26,8 @@
                 @endphp
                 @if (count($modulos->get()) > 0)
                     @foreach ($modulos->get() as $modulo)
-                        <li id="{{ $modulo->id }}" class="nav-item has-treeview">
-                            <a class="nav-link" >
+                        <li id="{{ $modulo->id }}" class="nav-item has-treeview pointer">
+                            <a class="nav-link">
                                 <i class="{{ $modulo->icone ?? 'far fa-fw fa-circle' }}"></i>
                                 <p>
                                     {{ $modulo->nome }}
